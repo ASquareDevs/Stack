@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html style="margin:0;padding:0">
+<head>
+<script type="text/javascript" src="CommunicationOuter.js"></script>
+</head>
+<body style="margin:0;padding:0;">
+</body>
+</html>
+
+<script type="text/javascript">
+
+	//------------------------------------//
+    function GenerateiFrame() 
+	//------------------------------------//
+	{
+        var ifrm = document.createElement("iframe");
+		ifrm.setAttribute("id", "enterprise" );
+		ifrm.setAttribute("class", "enterpriseIframe");
+        ifrm.setAttribute("src", GetiFrameURL());
+        ifrm.style.width = "100%";
+        ifrm.style.height = "100%";
+		ifrm.style.position = "absolute";
+		ifrm.style.margin = "auto";
+		ifrm.style.border = "0";
+        document.body.appendChild(ifrm);
+		
+    } //END GenerateiFrame
+	
+	//-----------------------------------//
+	//Returns the path to the HTML file that loads the WebGL player
+	function GetiFrameURL()
+	//-----------------------------------//
+	{
+		return "index.html";
+		
+	} //END GetiFrameURL
+	
+	//Create the iFrame!
+	GenerateiFrame();
+	
+</script> 
