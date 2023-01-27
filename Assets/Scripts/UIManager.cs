@@ -66,12 +66,7 @@ public class UIManager : MonoBehaviour
     {
         if (canvas.interactable && Input.GetMouseButtonDown(0))
         {
-            if (visibleStart)
-            {
-                StartCoroutine(HideStart());
-            }
-
-            else if (visibleRestart)
+            if (visibleRestart)
             {
                 HideRestart();
             }
@@ -89,6 +84,7 @@ public class UIManager : MonoBehaviour
 
         canvas.interactable = true;
         visibleStart = true;
+        StartCoroutine(HideStart());
     }
 
     public void OnGameOver()
@@ -111,6 +107,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator HideStart()
     {
+        yield return new WaitForSeconds(3.5f);
         title.FadeOut();
         visibleStart = false;
         canvas.interactable = false;
